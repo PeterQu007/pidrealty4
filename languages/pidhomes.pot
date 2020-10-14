@@ -1,0 +1,586 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: RealHomesChildTheme 2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-13 01:57+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.4.3; wp-5.4.2"
+
+#: archive-community.php:62 single-cma.php:436 single-community.php:78
+#, php-format
+msgid "%s Market Chart"
+msgstr ""
+
+#: archive-community.php:66
+#, php-format
+msgid "%s House Inventory"
+msgstr ""
+
+#: archive-community.php:79 single-community.php:94
+#, php-format
+msgid "%s School List"
+msgstr ""
+
+#: archive-community.php:92 single-community.php:107
+#, php-format
+msgid "Active Listings Of %s"
+msgstr ""
+
+#: archive-community.php:107 single-community.php:113
+#, php-format
+msgid "More Related Communities Of %s"
+msgstr ""
+
+#: single-cma.php:205
+msgid "Subject Property: "
+msgstr ""
+
+#: single-cma.php:211
+msgid "BCA"
+msgstr ""
+
+#: single-cma.php:212
+msgid "Size"
+msgstr ""
+
+#: single-cma.php:213
+msgid "Value"
+msgstr ""
+
+#: single-cma.php:215
+msgid "Improve"
+msgstr ""
+
+#: single-cma.php:219
+msgid "Land"
+msgstr ""
+
+#: single-cma.php:223
+msgid "Total"
+msgstr ""
+
+#: single-cma.php:228
+msgid "CMA Comparables Criteria"
+msgstr ""
+
+#: single-cma.php:230
+msgid "Criteria No"
+msgstr ""
+
+#: single-cma.php:231
+msgid "Criteria Name"
+msgstr ""
+
+#: single-cma.php:232
+msgid "Criteria Value"
+msgstr ""
+
+#: single-cma.php:235
+msgid "Active Listings Price Analysis"
+msgstr ""
+
+#: single-cma.php:238 single-cma.php:249 single-cma.php:292 single-cma.php:303
+msgid "Metric Name"
+msgstr ""
+
+#: single-cma.php:239 single-cma.php:250 single-cma.php:269 single-cma.php:293
+#: single-cma.php:304 single-cma.php:323
+msgid "Low End"
+msgstr ""
+
+#: single-cma.php:240 single-cma.php:251 single-cma.php:270 single-cma.php:294
+#: single-cma.php:305 single-cma.php:324
+msgid "Average"
+msgstr ""
+
+#: single-cma.php:241 single-cma.php:252 single-cma.php:271 single-cma.php:295
+#: single-cma.php:306 single-cma.php:325
+msgid "High End"
+msgstr ""
+
+#: single-cma.php:243 single-cma.php:297
+msgid "Market Price (PSF)"
+msgstr ""
+
+#: single-cma.php:245 single-cma.php:299
+msgid "Market Price (Total)"
+msgstr ""
+
+#: single-cma.php:247 single-cma.php:264 single-cma.php:301 single-cma.php:318
+msgid "BCA Change (%)"
+msgstr ""
+
+#: single-cma.php:254 single-cma.php:308
+msgid "Land Market Price (PSF)"
+msgstr ""
+
+#: single-cma.php:259 single-cma.php:313
+msgid "Improv. Market Price (PSF)"
+msgstr ""
+
+#: single-cma.php:268 single-cma.php:322
+msgid "Eval Type"
+msgstr ""
+
+#: single-cma.php:273 single-cma.php:327
+msgid "Market Value Range 1"
+msgstr ""
+
+#: single-cma.php:278 single-cma.php:332
+msgid "Market Value Range 2"
+msgstr ""
+
+#: single-cma.php:284 single-cma.php:338
+msgid "Evaluation 1"
+msgstr ""
+
+#: single-cma.php:285 single-cma.php:339
+msgid "Evaluation 2"
+msgstr ""
+
+#: single-cma.php:286 single-cma.php:340
+msgid "Start Over"
+msgstr ""
+
+#: single-cma.php:289
+msgid "Sold Listings Price Analysis"
+msgstr ""
+
+#: single-cma.php:440
+#, php-format
+msgid "%s Real Estate Monthly House HPI"
+msgstr ""
+
+#: inc/pid_translate.php:174
+msgid "All Types&nbsp"
+msgstr ""
+
+#: inc/pid_translate.php:175
+msgid "Townhouse&nbsp"
+msgstr ""
+
+#: inc/pid_translate.php:176
+msgid "Single House&nbsp"
+msgstr ""
+
+#: inc/pid_translate.php:177
+msgid "Apartment&nbsp"
+msgstr ""
+
+#: inc/pid_translate.php:178
+msgid "By Hoods"
+msgstr ""
+
+#: inc/pid_translate.php:179
+msgid "Property Type:&nbsp"
+msgstr ""
+
+#: inc/pid_translate.php:180
+msgid "Years:&nbsp"
+msgstr ""
+
+#: inc/pid_translate.php:181
+msgid "Start Month:&nbsp"
+msgstr ""
+
+#: inc/pid_translate.php:182
+msgid "Chart Type:&nbsp"
+msgstr ""
+
+#: inc/pid_translate.php:183
+msgid "HPI Price $ $&nbsp"
+msgstr ""
+
+#: inc/pid_translate.php:184
+msgid "HPI $ Change %&nbsp"
+msgstr ""
+
+#: inc/pid_translate.php:185
+msgid "More Community Market Charts:"
+msgstr ""
+
+#: inc/pid_translate.php:205
+msgid "detached"
+msgstr ""
+
+#: inc/pid_translate.php:206
+msgid "townhouse"
+msgstr ""
+
+#: inc/pid_translate.php:207
+msgid "apartment"
+msgstr ""
+
+#: inc/pid_translate.php:208
+msgid "condo"
+msgstr ""
+
+#: inc/pid_translate.php:209 inc/pid_translate.php:210
+msgid "all"
+msgstr ""
+
+#: inc/pid_translate.php:217
+msgid "Housing Market Chart and Report"
+msgstr ""
+
+#: inc/pid_translate.php:217
+msgid "REALTOR"
+msgstr ""
+
+#: inc/pid_translate.php:219
+msgid "Real Estate"
+msgstr ""
+
+#: inc/pid_translate.php:219
+msgid "HPI Home Price Chart"
+msgstr ""
+
+#: inc/pid_translate.php:220
+msgid "[How to use]"
+msgstr ""
+
+#: inc/pid_translate.php:220
+msgid ""
+"Select a Greater Vancouver City/District, the communities of the City will "
+"be displayed under the main panel."
+msgstr ""
+
+#: inc/pid_translate.php:221
+msgid ""
+" Select one or more communities to show or compare the HPI House Price Trend "
+"Line. Press X to reset and start over."
+msgstr ""
+
+#: inc/pid_translate.php:222
+#, php-format
+msgid " For Example, if you want to check the %s"
+msgstr ""
+
+#: inc/pid_translate.php:223
+#, php-format
+msgid " Communities House Price Trend, first click %s"
+msgstr ""
+
+#: inc/pid_translate.php:225
+msgid ""
+" Label, then you can select any community from the sub panel, and the Trend "
+"Line will be displayed according to your selection."
+msgstr ""
+
+#: inc/pid_translate.php:226
+msgid ""
+" HPI stands for MLS® Home Price Index, which is published by <b>CREA</b>(The "
+"Canadian Real Estate Association) and Real Estate Boards of every area. HPI "
+"tracks trends in home prices in markets across Canada."
+msgstr ""
+
+#: inc/pid_translate.php:227
+msgid "Real Estate Monthly House HPI"
+msgstr ""
+
+#: inc/pid_translate.php:229
+msgid "Active Listings"
+msgstr ""
+
+#: inc/pid_translate.php:230
+msgid "More Community Market Charts"
+msgstr ""
+
+#: pid-partials/content-demographic BACKUP.php:26
+#: pid-partials/content-demographic.php:24
+msgid "Greater Vancouver Demographic Information"
+msgstr ""
+
+#: pid-partials/content-demographic BACKUP.php:50
+#: pid-partials/content-demographic.php:43
+msgid " Demographic Information"
+msgstr ""
+
+#: pid-partials/content-metabox.php:36 pid-partials/content-metabox.php:52
+msgid "communities"
+msgstr ""
+
+#: pid-partials/content-metabox.php:40
+msgid "schools"
+msgstr ""
+
+#: pid-partials/content-metabox.php:44
+msgid "markets"
+msgstr ""
+
+#: pid-partials/content-metabox.php:48
+msgid "cma"
+msgstr ""
+
+#: pid-partials/content-metabox.php:118
+msgid "GVA "
+msgstr ""
+
+#: pid-partials/content-pid-post.php:113 pid-partials/content-pid-post.php:148
+#, php-format
+msgid "Load More %s ..."
+msgstr ""
+
+#: pid-partials/content-pid-post.php:145
+#, php-format
+msgid "End of %s List"
+msgstr ""
+
+#: pid-partials/content-pid-post.php:156
+#, php-format
+msgid "MORE %s WILL BE COMING SOON ..."
+msgstr ""
+
+#: src/PIDEnv.php:87
+#, php-format
+msgid "%s Communities List"
+msgstr ""
+
+#: src/PIDEnv.php:88 src/PIDHomesSEO.php:131
+#, php-format
+msgid "%s Real Estate Market Charts"
+msgstr ""
+
+#: src/PIDEnv.php:151
+#, php-format
+msgid "%s Real Estate Market Home Price Chart"
+msgstr ""
+
+#: src/PIDEnv.php:154
+#, php-format
+msgid "%s Concise School Report"
+msgstr ""
+
+#: src/PIDEnv.php:157
+#, php-format
+msgid "%s Real Estate Concise Community Report"
+msgstr ""
+
+#: src/PIDEnv.php:160
+#, php-format
+msgid "%s Real Estate Market Analysis Report"
+msgstr ""
+
+#: src/PIDEnv.php:163
+#, php-format
+msgid "%s Real Estate Market Summary Page"
+msgstr ""
+
+#: src/PIDEnv.php:167
+msgid "Greater Vancouver Real Estate Market Summary Page"
+msgstr ""
+
+#: src/PIDHomesSEO.php:72
+msgid "Surrey REALTOR | Peter Qu | Buy & Sell"
+msgstr ""
+
+#: src/PIDHomesSEO.php:75
+msgid "Vancouver REALTOR | Peter Qu | Buy & Sell"
+msgstr ""
+
+#: src/PIDHomesSEO.php:85 src/PIDHomesSEO.php:91 src/PIDHomesSEO.php:97
+#: src/PIDHomesSEO.php:103 src/PIDHomesSEO.php:109 src/PIDHomesSEO.php:115
+#, php-format
+msgid "%s REALTOR"
+msgstr ""
+
+#. Author of the theme
+#: src/PIDHomesSEO.php:86 src/PIDHomesSEO.php:92 src/PIDHomesSEO.php:98
+#: src/PIDHomesSEO.php:104 src/PIDHomesSEO.php:110 src/PIDHomesSEO.php:116
+#: src/PIDHomesSEO.php:124
+msgid "Peter Qu"
+msgstr ""
+
+#: src/PIDHomesSEO.php:87
+#, php-format
+msgid "%s Communities Expert"
+msgstr ""
+
+#: src/PIDHomesSEO.php:88 src/PIDHomesSEO.php:100 src/PIDHomesSEO.php:106
+#: src/PIDHomesSEO.php:112 src/PIDHomesSEO.php:118 src/PIDHomesSEO.php:128
+#: src/PIDHomesSEO.php:136 src/PIDHomesSEO.php:140 src/PIDHomesSEO.php:144
+#: src/PIDHomesSEO.php:148
+msgid "Professionalism | Integrity | Diligence"
+msgstr ""
+
+#: src/PIDHomesSEO.php:93
+#, php-format
+msgid "%s Home Price Expert"
+msgstr ""
+
+#: src/PIDHomesSEO.php:99
+#, php-format
+msgid "%s Market Analysis Expert"
+msgstr ""
+
+#: src/PIDHomesSEO.php:105 src/PIDHomesSEO.php:111
+#, php-format
+msgid "%s Listing Expert"
+msgstr ""
+
+#: src/PIDHomesSEO.php:117 src/PIDHomesSEO.php:147
+#, php-format
+msgid "%s Real Estate Expert"
+msgstr ""
+
+#: src/PIDHomesSEO.php:123
+msgid "Vancouver REALTOR"
+msgstr ""
+
+#: src/PIDHomesSEO.php:127
+#, php-format
+msgid "%s Communities Summary Report"
+msgstr ""
+
+#: src/PIDHomesSEO.php:135
+#, php-format
+msgid "%s Market Analysis Report"
+msgstr ""
+
+#: src/PIDHomesSEO.php:139
+#, php-format
+msgid "%s Active Listings"
+msgstr ""
+
+#: src/PIDHomesSEO.php:143
+#, php-format
+msgid "%s Listing"
+msgstr ""
+
+#: src/PIDHomesSEO.php:171
+msgid ""
+"Surrey REALTOR, Peter Qu, Home for sale in Surrey, South Surrey, White Rock, "
+"Fraser Heights, Fleetwood, Cloverdale, Single House, Townhouse, Apartment "
+"Condo By Surrey Real Estate Agent Peter Qu"
+msgstr ""
+
+#: src/PIDHomesSEO.php:173
+msgid ""
+"Vancouver REALTOR, Peter Qu, Home for sale in Vancouver,Surrey,Burnaby,"
+"Richmond,Coquitlam,Port Moody,White Rock,Single House, Townhouse, Apartment "
+"Condo By Vancouver Real Estate Agent Peter Qu"
+msgstr ""
+
+#: src/PIDHomesSEO.php:182
+msgid ""
+"Surrey Real Estate Neighborhoods And Communities Expert, Surrey REALTOR, "
+"Peter Qu, Surrey Home for sale, South Surrey, Cloverdale, White Rock, Fraser "
+"Heights, Fleetwood, Morgan Heights"
+msgstr ""
+
+#: src/PIDHomesSEO.php:183
+msgid ""
+"Surrey Real Estate Professional and Real Estate Expert, single house, "
+"townhouse, apartment, condo, residential, commercial"
+msgstr ""
+
+#: src/PIDHomesSEO.php:187
+msgid ""
+"Surrey Real Estate Home Price Expert, Free Home Evaluation, Surrey REALTOR, "
+"Peter Qu, Surrey Home for sale"
+msgstr ""
+
+#: src/PIDHomesSEO.php:188 src/PIDHomesSEO.php:193 src/PIDHomesSEO.php:199
+#: src/PIDHomesSEO.php:204
+msgid ""
+"Surrey Real Estate Professional and Expert, South Surrey, White Rock, Fraser "
+"Heights, Fleetwood, Morgan Heights, Cloverdale, Guilford"
+msgstr ""
+
+#: src/PIDHomesSEO.php:192
+msgid ""
+"Surrey Real Estate CMA Market Analysis Expert, Surrey REALTOR, Peter Qu, "
+"Surrey Home for sale"
+msgstr ""
+
+#: src/PIDHomesSEO.php:198
+#, php-format
+msgid ""
+"%s Home For Sale, Listing Expert, Single House, Townhouse, Apartment, Condo, "
+"Surrey REALTOR, Peter Qu"
+msgstr ""
+
+#: src/PIDHomesSEO.php:203
+msgid ""
+"Surrey REALTOR, Peter Qu, Buy and Sell in Surrey, Home for sale in Surrey, "
+"South Surrey, White Rock, Fraser Heights, Fleetwood, Cloverdale, Single "
+"House, Townhouse, Apartment Condo By Surrey Realtor Peter Qu"
+msgstr ""
+
+#: src/PIDHomesSEO.php:208
+msgid ""
+"Vancouver REALTOR, Peter Qu, Buy and Sell in Vancouver, Home for sale in "
+"Vancouver, Single House, Townhouse, Apartment Condo By Vancouver Realtor "
+"Peter Qu"
+msgstr ""
+
+#: src/PIDHomesSEO.php:209
+msgid ""
+"Vancouver Real Estate Professional and Expert, Vancouver,Burnaby,Richmond,"
+"Surrey,White Rock,Coquitlam"
+msgstr ""
+
+#: src/PIDHomesSEO.php:219
+msgid "Surrey REALTOR Peter Qu"
+msgstr ""
+
+#: src/PIDHomesSEO.php:221
+msgid "Vancouver REALTOR Peter Qu"
+msgstr ""
+
+#. Name of the template
+msgid "Fluid Width"
+msgstr ""
+
+#. Name of the template
+msgid "Full Width"
+msgstr ""
+
+#. Name of the template
+msgid "Home"
+msgstr ""
+
+#: assets/modern/partials/banner/community.php:44
+msgid " Communities"
+msgstr ""
+
+#: assets/modern/partials/banner/community.php:46
+msgid "Greater Vancouver Communities"
+msgstr ""
+
+#: assets/modern/partials/communities/community-gallery copy.php:25
+#: assets/modern/partials/communities/community-gallery.php:28
+msgid "Explore Popular Greater Vancouver Neighborhoods"
+msgstr ""
+
+#: assets/modern/partials/communities/community-gallery copy.php:59
+#: assets/modern/partials/communities/community-gallery.php:62
+#, php-format
+msgid "View all %s communities"
+msgstr ""
+
+#. Name of the theme
+msgid "PIDHOMES.ca Theme 3"
+msgstr ""
+
+#. Description of the theme
+msgid "Child theme for Real Homes."
+msgstr ""
+
+#. URI of the theme
+msgid ""
+"http://themeforest.net/item/real-homes-wordpress-real-estate-theme/5373914"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://www.inspirythemes.com/"
+msgstr ""

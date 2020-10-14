@@ -1,0 +1,47 @@
+
+<div style="text-align: left">
+{# <h2>content metabox ajax</h2> #}
+{# {{ dump() }} #}
+</div>
+
+<div class="metabox metabox--with-home-link" style="font-size: 20px; text-align: left; display: block">
+  <div id="{{ pid_market_chart_canvas_id }}">
+    <div style="text-align: left">
+      <form name='{{ pid_market_form_location }}' class="metabox metabox--with-home-link" style="display: block">
+        <fieldset>
+          <div style="display: inline-block">
+
+            {% if market_report_level == 0 %}
+              <i class="fas fa-city" aria-hidden="true"> </i>
+              <label class= "{{ activeClass }}" slug="{{input_slug}}" for= "{{ input_id }}" >{{ input_label }}</label>
+              <input type="hidden" id="{{ input_id }}" name="{{ input_name }}" nbhCodes="{{ nbh_codes }}" nbhNames='{{nbh_names}}' />
+            {% endif %}
+
+            {% for mb in metaboxes %}
+              <i class="fas fa-ellipsis-v" aria-hidden="true"> </i>
+              <label class= "{{ mb.active_class }}" slug="{{mb.input_slug}}" for= "{{ mb.input_id }}" >{{ mb.input_label }}</label>
+              <input type="hidden" id="{{ mb.input_id }}" name="{{ mb.input_name }}" nbhCodes="{{ mb.nbh_codes }}" nbhNames='{{mb.nbh_names}}' />
+            {% endfor %}
+
+          </div>
+        </fieldset>
+      </form>
+      <div style="clear:both"></div>
+    </div>
+  </div>
+
+  <div class="sub_market_wrapper">
+    <div style="text-align: left">
+      <form name="{{ pid_submarket_form_name }}" class="metabox metabox--with-home-link" style="display: block">
+        <fieldset id="{{ pid_submarket_fieldset_id }}">
+        </fieldset>
+      </form>
+      <div class="form_footer form_footer__hidden" id="form_footer_<?php echo $chartCanvasID; ?>">
+        <input id="{{pid_form_footer_button}}" type='button' value='Start Over'>
+        <label for="{{ pid_filter_submarket_label }}">Filter</label>
+        <input id="{{pid_filter_submarket_input}}" type='text' placeholder="Filter by Community Name">
+      </div>
+      <div style="clear:both"></div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+{# {{ dump() }} #}
+
+{{ include('/partials-twig/components/metabox-ajax.twig', metabox) }}
+
+<div style="text-align: left">
+  <form name="{{ pid_market_form }}" style="display:block">
+    <fieldset class='select_chart_params'>
+      <span><strong>{{ select_property_type }}</strong></span>
+      <div style="display: inline-block">
+        {% for pt in property_type_select_radios %}
+        <input type="radio" id="{{ pt.pid_property_radio_id }}" name="{{ pt.pid_property_radio_name }}" value="{{pt.pid_property_radio_value}}" {{ pt.pid_property_radio_checked }} />
+        <label for="{{ pt.pid_property_radio_id }}">{{ pt.pid_label_innertext }}</label>
+        {% endfor %}
+        <input type="checkbox" id="{{ pid_property_grouped_by_nbh }}" name="{{ pid_property_grouped_by_nbh_name }}" {{ pid_property_grouped_by_nbh_checked }}/>
+        <label for={{ pid_property_grouped_by_nbh }}>{{ pid_property_grouped_by_nbh_innertext }}</label>
+      </div>
+    </fieldset>
+  </form>
+  <div style="clear:both"></div>
+</div>
+<div style="text-align: left">
+  <form name="{{ pid_market_form_time }}" style="display:block">
+    <fieldset class='select_chart_params'>
+      <div style="display: inline-block">
+        <span><strong>{{ pid_market_form_time_year }}</strong></span>
+        {% for ys in year_selects %}
+        <input type="checkbox" id="{{ ys.year_checkbox_id }}" name="{{ys.year_checkbox_name}}" value={{ys.year_checkbox_value}} {{ys.year_checkbox_checked}} />
+        <label for="{{ ys.year_checkbox_id }}">{{ ys.year_checkbox_value }}</label>
+        {% endfor %}
+      </div>
+      <div style="display: inline-flex">
+        <label for={{ pid_market_form_start_month }} style="width: 210px"><strong>{{pid_market_form_month_label}}</strong></label>
+        <select class="pid_select_month" id="{{pid_market_form_start_month}}" name="{{pid_market_form_month_name}}" style="text-align: right">
+          {% for mn in month_selects %}
+          <option value={{mn.month_value}} {{mn.month_selected}}> {{mn.month_value}} </option>
+          {% endfor %}
+        </select>
+      </div>
+    </fieldset>
+  </form>
+  <div style="clear:both"></div>
+</div>
+<div style="text-align: left">
+  <form name="{{pid_market_form_chart_type}}" style="display:block">
+    <fieldset class='select_chart_params'>
+      <span><strong>{{pid_market_form_ct_label}}</strong></span>
+      <div style="display: inline-block">
+      {% for ct in chart_type_selects %}
+        <input type="radio" id="{{ct.pid_ct_radio_id}}" name="{{ct.pid_ct_radio_name}}" value={{ct.pid_ct_radio_value}} {{ct.pid_ct_radio_selected}} />
+        <label for="{{ct.pid_ct_radio_id}}">{{ct.pid_ct_label}}</label>
+      {% endfor %}
+      </div>
+    </fieldset>
+  </form>
+  <div style="clear:both"></div>
+</div>
+<div>
+  <a id="pid_chart_share_link" href="{{pid_share_link}}" target="_blank"><i id="pid_chart_share" class="fa fa-external-link" style="color:red"></i></a>
+  <input class="pid_input_text" type = "text" id="pid_chart_share_input" placeholder="share link" value="{{pid_share_link}}" />
+</div>
+<div id="{{ chart_canvas_wrapper_id }}" style="text-align: left">
+  <canvas id="{{ chart_canvas_id }}"></canvas>
+</div>
+<div class="facebook share and like">
+  <div class="fb-like" data-href="{{fb_share_and_like_link}}" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+</div>
+<div class="pid_section_two_columns">
+  <div class="rh_property__print pid_float_right">
+    <a href="#" class="share" id="social-share-chart">
+      {{ function('inspiry_safe_include_svg','/images/icons/icon-share-2.svg') }}
+      <span class="rh_tooltip">
+        <p class="label">
+            {% if social_share_label %}
+              {# {{ function('esc_html', social_share_label) }} #}
+              {{ function('esc_html_e','Share', 'framework') }}
+            {% else %}
+              {{ function('esc_html_e','Share', 'framework') }}
+            {% endif %}
+        </p>
+      </span>
+    </a>
+    <div class="share-this-chart" data-check-mobile="{{social_is_mobile}}" data-property-name="{{social_section_title}}" data-property-permalink="{{fb_share_and_link_link}}">
+    </div>
+  </div>
+</div>
+
+<div class="only-for-print" id="{{canvas_drawing_container}}">
+</div>

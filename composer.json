@@ -1,0 +1,11 @@
+{
+    "require": {
+        "salarmehr/cosmopolitan": "^1.0",
+        "timber/timber": "^1.18"
+    },
+    "autoload": {
+        "psr-4": {
+            "PIDHomes\\": "src/"
+        }
+    }
+}

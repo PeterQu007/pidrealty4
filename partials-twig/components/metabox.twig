@@ -1,0 +1,32 @@
+
+{# {{ dump()}} #}
+
+<div class="metabox metabox--with-home-link" style="font-size: 20px; text-align: left; display: block">
+    <div style="font-size: 16px; text-align: left; display: block" id="<?php echo $market_section_id ?>" nbhCodes="{{nbh_codes}}" nbhNames="{{nbh_names}}">
+        {% if is_pid_post %}
+            <a class="metabox__blog-home-link" href="{{ nav_link }}">
+                <i class="fas fa-map-marked" aria-hidden="true"> </i> 
+                {{ gva_label}}
+            </a>
+        {% else %}
+            <a class="{{ gva_class }}" href="{{ nav_link }}">
+                <i class="fas fa-map-marked" aria-hidden="true"></i>
+                {{ gva_label}}
+            </a>
+        {% endif %}
+
+        <!-- Top Level City -->
+        <a class="{{ city_class }}" href="{{ city_nav_link }}">
+            <i class="fas fa-city" aria-hidden="true"></i>
+            {{ city_meta }}
+        </a>
+
+        <!-- Level 2 City District -->
+        {% for meta in metas %}
+            <a class="{{ meta.district_class }}" href="{{ meta.district_nav_link }}">
+                <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+                {{ meta.Term_Label }}
+            </a>
+        {% endfor %}
+    </div>
+</div>

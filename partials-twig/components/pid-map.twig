@@ -1,0 +1,15 @@
+{# {{ dump(pid_map_locations) }} #}
+
+{% block pid_map %}
+    {% if show_map %}
+        <img src="{{pid_map_image}}" style="display:none"></img>
+        <div id="listing-map" class="acf-map" style="text-align:left; padding: 0 2px">
+            {% for location in pid_map_locations %}
+                <div style="display:inline-block; padding: 0 2px" class="marker" data-lat="{{ location.map_location.lat }}" data-lng="{{location.map_location.lng}}">
+                    <h5 style="display:inline-block; padding: 0 2px; margin: 0"><a href="{{ location.nav_link }}">{{ location.map_location_label }}</a></h5>
+                    {{location.location_name}}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

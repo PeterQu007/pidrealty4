@@ -1,0 +1,35 @@
+
+{# VIEW:: RPS LISTINGS #}
+
+{{ dump(rps_listings) }}
+
+<hr class="pid_separator--first-line">
+<section class='rps_listing-template-default single single-rps_listing variation--cards wpb-js-composer js-comp-ver-6.1 vc_responsive pid_community'>
+  <div class="vc_row wpb_row vc_row-fluid rp-page vc_custom_1530887860175 vc_row-has-fill main--content">
+    <div class="wrapper container">
+      <div class="row">
+        <div class="ihf-page wpb_column vc_column_container vc_col-sm-12 ">
+          <div class="vc_column-inner ">
+            <div class="wpb_wrapper ">
+              <h1 class="pid_separator pid_community_h1">{{rps_section_h1}}</h1>
+                 {% filter shortcodes %}
+                    {% if community_level == "0" %}
+                      [rps-listing-slider-2 max_slides=8]
+                    {% endif %}
+                    {% if community_level == "1" %}
+                      [rps-listing-slider-2 max_slides=8 city="{{rps_location}}"]
+                    {% endif %}
+                    {% if community_level == "2" %}
+                      [rps-listing-slider-2 max_slides=8 community_name="{{rps_location}}"]
+                    {% endif %}
+                    {% if community_level == "3" %}
+                      [rps-listing-slider-2 max_slides=8 neighbourhood="{{rps_location}}"]
+                    {% endif %}
+                  {% endfilter %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

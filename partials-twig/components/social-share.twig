@@ -1,0 +1,24 @@
+{# {{ dump()}} #}
+<section class="pid_section_two_columns">
+  <!-- Start Social Media Share-->
+  <div class="rh_property__print pid_float_right_bottom">
+      <a href="#" class="share" id="social-share">
+        {{ function('inspiry_safe_include_svg','/images/icons/icon-share-2.svg')}}
+        <span class="rh_tooltip">
+          <p class="label">
+              {% if social_share_label %}
+                {# {{ function('esc_html', social_share_label) }} #}
+                {{ function('esc_html_e','Share', 'framework') }}
+              {% else %}
+                {{ function('esc_html_e','Share', 'framework') }}
+              {% endif %}
+          </p>
+        </span>
+      </a>
+      <div id="{{share_button_id}}" class="{{share_button_class}}" data-check-mobile="{{social_is_mobile}}" data-property-name="{{social_section_title}}" data-property-permalink="{{fb_share_and_like_link}}">
+      </div>
+  </div>
+  <!-- END Social Media Share-->
+  <h2 class="pid_separator--first-line"></h2>
+  <h2 class="pid_separator--first-line"></h2>
+</section>

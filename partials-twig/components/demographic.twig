@@ -1,0 +1,21 @@
+
+<div>
+  <div id="demographic" class="demographic-wrapper" uid={{GEO_UID}}>
+      <h1 class="pid_community_h1">
+      <i class="fas fa-id-card" aria-hidden="true"> </i> 
+      {{demographic_title}}</h1>
+      {% if location_is_gva %}
+        {% filter shortcodes %}
+          [wpdatatable id=10]
+          [wpdatatable id=9] 
+          [wpdatatable id=18]
+        {% endfilter %}
+      {% else %}
+        {% filter shortcodes %}
+          [wpdatatable id=6 var1={{city_code}}]
+          [wpdatatable id=7 var1={{city_code}}]
+          [wpdatatable id=17 var1={{city_code}}]
+        {% endfilter %}
+      {% endif %}
+  </div>
+</div>

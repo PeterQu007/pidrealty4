@@ -1,0 +1,81 @@
+
+{#/**
+ * PIDHomes:: All Communities Page
+ *
+ * @package realhomes-child
+ * @subpackage modern
+ */#}
+
+{# {{ dump( school.metabox ) }} #}
+
+{# Render Page Header / Banner #}
+{# {% if get_header %}
+  {{ function('get_template_part', 'assets/modern/partials/banner/header') }}
+{% elseif get_banner %}
+  {{ function('get_template_part', 'assets/modern/partials/banner/community') }}
+{% endif %} #}
+
+<script>
+  var ajax_session = new Object(); // Prepare for paginator and loadmore javascript
+</script>
+
+<session class="rh_section rh_section--flex rh_wrap--padding rh_wrap--topPadding">
+  <div class="rh_page rh_page__listing_page rh_page__main">
+    {# GET COMMUNITY BLOCK #}
+    <div class="pid_community">
+      <h1 class="pid_community_h1">
+      <i class="fas fa-map-marked" aria-hidden="true"> </i> 
+      {{ community_section_h1 }}</h1>
+      {# RENDER SOCIAL SHARE BUTTONS #}
+      {{ include('partials-twig/components/social-share.twig', social_share) }}
+      {{ include('partials-twig/components/pid-map.twig', community ) }}
+      {{ include('partials-twig/components/pid-post.twig', community) }}
+    </div>
+    {# Get Market Charts #}
+    <div class="pid_community">
+      <h1 class="pid_community_h1">
+      <i class="fas fa-chart-line" aria-hidden="true"> </i> 
+      {{ market_section_h1 }}</h1>
+      {{ include ('partials-twig/components/market-stats.twig', market) }}
+    </div>
+    {# Get Housing Inventory Table #}
+    <div class="pid_housing_inventory">
+      <h1 class="pid_community_h1">
+      <i class="fas fa-house-user" aria-hidden="true"> </i> 
+      {{house_inventory_title}}</h1>
+      {% if location_is_gva %}
+        {% filter shortcodes %}
+          [wpdatatable id=11]
+        {% endfilter %}
+      {% else %}
+        {% filter shortcodes %}
+          [wpdatatable id=8 var1={{ community.neighborhood_code }}]
+        {% endfilter %}
+      {% endif %}
+    </div>
+    {# Get School Posts -- Todo #}
+    <div class="pid_community">
+      <h1 class="pid_community_h1">
+      <i class="fas fa-school" aria-hidden="true"> </i> 
+      {{ school_section_h1 }}</h1>
+      {% include 'partials-twig/components/pid-post.twig' with school %}
+    </div>
+    {# Render Demographic Content block #}
+    {{ function('get_template_part', 'pid-partials/content', 'demographic') }}
+  
+    {# RENDER RPS LISTING SHOWCASE #}
+    {{ include('partials-twig/components/rps-listings.twig', rps_listings) }}
+
+    {# RENDER MORE COMMUNITY MARKET CHARTS LINKS #}
+    {{ include('partials-twig/components/related-communities.twig', related_communities) }}
+  </div>
+  <div class="rh_page rh_page_sidebar">
+    {# RENDER SIDEBAR #}
+    {{ function('get_sidebar', 'default') }}
+  </div>
+</session>
+
+{# PIDHomes: show Peter Qu Banner #}
+{{ function('get_template_part', 'assets/modern/partials/banner/peterqu') }}
+{# RENDER FOOTER BLOCK #}
+{{ function('get_footer') }};

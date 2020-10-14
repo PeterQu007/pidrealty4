@@ -1,0 +1,61 @@
+<div style="text-align: left">
+    {# {{ dump( pid_location_and_posts.vancouver ) }} #}
+</div>
+
+{% block pid_location_and_posts %}
+    {% for loc_and_posts in pid_location_and_posts %}
+        <div style="text-align: left">
+        {# {{ dump(loc_and_posts.locations.ajax_session) }} #}
+        </div>
+        {% if loc_and_posts.locations.have_posts %}
+            <session class="pid_home_session" id="{{ loc_and_posts.locations.session_id }}" post_type="{{ loc_and_posts.locations.post_type }}" name="{{ loc_and_posts.locations.session_id }}">
+                
+                <div class='pid_home_overlay'> </div>
+                <div class='location' id="__{{ loc_and_posts.locations.session_id }}" post_type="{{ loc_and_posts.locations.post_type }}" name="{{ loc_and_posts.locations.session_id }}">
+                    {# {{ function('get_template_part', '/pid-partials/content', 'metabox', loc_and_posts.metabox) }} #}
+                    {{ include('/partials-twig/components/metabox.twig', loc_and_posts.metabox) }}
+                    {% for post in loc_and_posts.posts %}
+                    <div style="text-align: left" class="{{loc_and_posts.locations.session_id}}">
+                        <h3><a href="{{post.nav_link}}"> {{ post.title }}</a> </h3>
+                        <div>{{ post.excerpt }} </div>
+                    </div>
+                    {% endfor %}
+                    <script>
+                        // var ajax_session = [];
+                        ajax_session['{{ loc_and_posts.locations.ajax_session.session_id }}'] = [
+                            '{{ loc_and_posts.locations.ajax_session.pid_posts_query_vars }}',
+                            '{{ loc_and_posts.locations.ajax_session.max_num_pages }}',
+                            '{{ loc_and_posts.locations.ajax_session.page }}',
+                            '{{ loc_and_posts.locations.ajax_session.post_type_labels }}',
+                        ]
+                        console.log(ajax_session);
+                    </script>
+                    <div class="loadmore2" id="load_more_{{ loc_and_posts.locations.session_id }}" > {{ loc_and_posts.locations.load_more_button_label }}</div> 
+                    {{ function('pid_paginator', loc_and_posts.locations.pid_posts, loc_and_posts.locations.session_id) }}
+                </div>
+
+            </session>
+            {% if loc_and_posts.locations.ajax_session.page < loc_and_posts.locations.ajax_session.max_num_pages %}
+                <script>
+                    var post_type = '{{ loc_and_posts.posts.post_type }}';
+                    console.log(post_type);
+                    var button_id = 'load_more_' + '{{ loc_and_posts.locations.session_id }}';
+                    var load_more_button = document.getElementById(button_id);
+                    if (load_more_button) {
+                        {% if loc_and_posts.locations.is_last_page %}
+                            load_more_button.style.pointerEvents = "none";
+                        {% else %}
+                            load_more_button.style.pointerEvents = "auto";
+                        {% endif %}
+                    }
+                </script>
+            {% endif %}
+        {% else %}
+            <div class='location' id="{{ loc_and_posts.locations.session_id }}" post_type="{{ loc_and_posts.locations.post_type }}" name="{{ loc_and_posts.locations.session_id }}">
+                {{ include('/partials-twig/components/metabox.twig', loc_and_posts.metabox) }}
+                <p class='community_empty'> {{ loc_and_posts.locations.pid_more_pidposts }} </p>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+

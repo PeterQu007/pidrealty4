@@ -1,0 +1,15 @@
+
+{# COMPONENT:: RELATED COMMUNITIES#}
+
+<section class='rps_listing-template-default single single-rps_listing variation--cards wpb-js-composer js-comp-ver-6.1 vc_responsive pid_community'>
+  <h2 class="pid_separator">{{more_community_charts_h1}}</h2>
+  <div class="metabox metabox--with-home-link">
+    <div class="sub_market_wrapper ">
+      <ul>
+          {% for nbh in nbh_terms %}
+          <li class="metabox__blog-home-link pid_more_community_label"><a href="{{nbh.nbh_link}}">{{nbh.more_nbhs_label}}</a></li>
+          {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

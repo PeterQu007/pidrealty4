@@ -1,0 +1,228 @@
+<hr class="pid_separator">
+<section class="rh_section rh_section--flex rh_wrap--padding rh_wrap--topPadding">
+
+  <div class="rh_page rh_page__listing_page rh_page__main">
+    <img src={{banner_image}}>
+
+    <h2 class="pid_separator--first-line">
+      {{ cma_title }}
+      {{ unit_no }}
+      {{ subject_address }},
+      {{ neighborhood }},
+      {{ city }}
+    </h2>
+    <h3 class='pid_cam_subject_price'>
+      <span>{{cma_id_label}}: {{cma_id}} | </span>
+      <span id="subject-active-price-id" value={{list_price_value}}>{{list_price_label}}: <b>{{list_price}}</b> | </span>
+      <span id="subject-sold-price-id" value={{sold_price_value}}>{{sold_price_label}}: <b>{{sold_price}}</b> | </span>
+      <span id="subject-bca-change-id" value={{bca_change_value}}>{{bca_change_label}}: <b>{{bca_change}}</b> </span>
+    <h3>
+    <canvas id='cma-value-price-ratio-gauge-1' width="200", height="120"></canvas>
+    <canvas id='cma-value-price-ratio-gauge-2' width="200", height="120"></canvas>
+    <canvas id='cma-value-price-ratio-gauge-3' width="200", height="120"></canvas>
+    <canvas id='cma-value-price-ratio-gauge-4' width="200", height="120"></canvas>
+    <h3 id="pid-mobile"></h3>
+    <div class="pid_separator--second-line"></div>
+    <div class="cma_subject">
+      {# Subject Table#}
+      <table>
+        <tr class="cma_result_header">
+          <td>{{subject_table_header_cell_1}}</td>
+          <td>{{subject_table_header_cell_2}}</td>
+          <td>{{subject_table_header_cell_3}}</td>
+        </tr>
+        <tr>
+          <td class="cma_result_header">{{subject_table_how1_cell_1}}</td>
+          <td><span id="pid_cma_total_floor_area">{{subject_table_how1_cell_2}} </span></td>
+          <td><span>{{subject_table_how1_cell_3}} </span></td>
+        </tr>
+        <tr>
+          <td class="cma_result_header">{{subject_table_how2_cell_1}}</td>
+          <td><span id="pid_cma_total_land_size">{{subject_table_how2_cell_2}} </span></td>
+          <td><span>{{subject_table_how2_cell_3}} </span></td>
+        </tr>
+        <tr>
+        <td class="cma_result_header">{{subject_table_how3_cell_1}}</td>
+          <td></td>
+          <td><span id="pid_cma_bca_total_value">{{subject_table_how3_cell_3}} </span></td>
+        </tr>
+      </table>
+      <!-- CMA Criteria Table -->
+      <h2 class="pid_separator--first-line pid_cma_sub_title">{{cma_criteria_table_heading}}</h2>
+      <table>
+        <tr class="cma_result_header">
+          <th>{{cma_criteria_table_header_cell_1}}</td>
+          <th><span>{{cma_criteria_table_header_cell_2}}</span></td>
+          <th><span>{{cma_criteria_table_header_cell_3}}</span></td>
+        </tr>
+        {% for criteria_rule in cma_criteria_rules %}
+          <tr>
+            <td class="cma_result_header">{{criteria_rule.criteria_no}}</td>
+            <td><span id="{{cma_criteria_table_row1_cell_2_id}}">{{criteria_rule.item}}</span></td>
+            <td><span id="{{cma_criteria_table_row1_cell_3_id}}">{{criteria_rule.value}}</span></td>
+          </tr>
+        {% endfor %}
+      </table>
+
+        <h2 class="pid_separator--first-line pid_cma_sub_title">{{active_table_heading}}</h2>
+        <!-- -->
+        <table>
+          <tr class="cma_result_header">
+            <th>{{active_table_header_cell_1}}</td>
+            <th><span>{{active_table_header_cell_2}}</span></td>
+            <th><span>{{active_table_header_cell_3}}</span></td>
+            <th><span>{{active_table_header_cell_4}}</span></td>
+          </tr>
+          <tr>
+            <td class="cma_result_header">{{active_table_row1_cell_1}}</td>
+            <td><span id="{{active_table_row1_cell_2_id}}">$</span></td>
+            <td><span id="{{active_table_row1_cell_3_id}}">$</span></td>
+            <td><span id="{{active_table_row1_cell_4_id}}">$</span></td>
+          </tr>
+          <tr>
+            <td class="cma_result_header">{{active_table_row2_cell_1}}</td>
+            <td><span id="{{active_table_row2_cell_2_id}}">$</span></td>
+            <td><span id="{{active_table_row2_cell_3_id}}">$</span></td>
+            <td><span id="{{active_table_row2_cell_4_id}}">$</span></td>
+          </tr>
+          <tr>
+            <td class="cma_result_header">{{active_table_row3_cell_1}}</td>
+            <td><span id="pid_cma_active_bca_change_perc_min">$</span></td>
+            <td><span id="pid_cma_active_bca_change_perc_avg">$</span></td>
+            <td><span id="pid_cma_active_bca_change_perc_max">$</span></td>
+          </tr>
+        </table>
+        <!-- -->
+        <hr>
+        <!-- -->
+        <div style="overflow-x: auto">
+          <table class="pid_separator--first-line pid_cma_result">
+            <tr>
+              <td>{{active_eval_table_header_cell_1}}</td>
+              <td><span>{{active_eval_table_header_cell_2}}</span></td>
+              <td><span>{{active_eval_table_header_cell_3}}</span></td>
+              <td><span>{{active_eval_table_header_cell_4}}</span></td>
+            </tr>
+            <tr>
+              <td>{{active_eval_table_row1_cell_1}}</td>
+              <td><span id="{{active_eval_table_row1_cell_2_id}}">$</span></td>
+              <td><span id="{{active_eval_table_row1_cell_3_id}}">$</span></td>
+              <td><span id="{{active_eval_table_row1_cell_4_id}}">$</span></td>
+            </tr>
+            <tr>
+              <td>{{active_eval_table_row2_cell_1}}</td>
+              <td><span id="{{active_eval_table_row2_cell_2_id}}">$</span></td>
+              <td><span id="{{active_eval_table_row2_cell_3_id}}">$</span></td>
+              <td><span id="{{active_eval_table_row2_cell_4_id}}">$</span></td>
+            </tr>
+          </table>
+        </div>
+        <!-- -->
+        <div class="pid_separator--second-line"></div>
+        <button id='pid_cma_evaluate_submit'>
+          {{active_eval_button_1}}
+        </button>
+        <button id='pid_cma_evaluate_by_bca_submit'>
+          {{active_eval_button_2}}
+        </button>
+        <button id="pid_cma_evaluate_start_over">{{active_eval_button_3}}</button>
+        <div class="pid_separator--second-line"></div>
+        <h2 class="pid_separator--first-line pid_cma_sub_title">{{sold_table_heading}}</h2>
+        <!-- Sold Listing -->
+        <table>
+          <tr class="cma_result_header">
+            <th>{{sold_table_header_cell_1}}</td>
+            <th><span>{{sold_table_header_cell_2}}</span></td>
+            <th><span>{{sold_table_header_cell_3}}</span></td>
+            <th><span>{{sold_table_header_cell_4}}</span></td>
+          </tr>
+          <tr>
+            <td class="cma_result_header">{{sold_table_row1_cell_1}}</td>
+            <td><span id="{{sold_table_row1_cell_2_id}}">$</span></td>
+            <td><span id="{{sold_table_row1_cell_3_id}}">$</span></td>
+            <td><span id="{{sold_table_row1_cell_4_id}}">$</span></td>
+          </tr>
+          <tr>
+            <td class="cma_result_header">{{sold_table_row2_cell_1}}</td>
+            <td><span id="{{sold_table_row2_cell_2_id}}">$</span></td>
+            <td><span id="{{sold_table_row2_cell_3_id}}">$</span></td>
+            <td><span id="{{sold_table_row2_cell_4_id}}">$</span></td>
+          </tr>
+          <tr>
+            <td class="cma_result_header">{{sold_table_row3_cell_1}}</td>
+            <td><span id="pid_cma_sold_bca_change_perc_min">$</span></td>
+            <td><span id="pid_cma_sold_bca_change_perc_avg">$</span></td>
+            <td><span id="pid_cma_sold_bca_change_perc_max">$</span></td>
+          </tr>
+        </table>
+        <div style="overflow-x: auto">
+          <table class="pid_separator--first-line pid_cma_result">
+            <tr>
+              <td>{{sold_eval_table_header_cell_1}}</td>
+              <td><span>{{sold_eval_table_header_cell_2}}</span></td>
+              <td><span>{{sold_eval_table_header_cell_3}}</span></td>
+              <td><span>{{sold_eval_table_header_cell_4}}</span></td>
+            </tr>
+            <tr>
+              <td>{{sold_eval_table_row1_cell_1}}</td>
+              <td><span id="{{sold_eval_table_row1_cell_2_id}}">$</span></td>
+              <td><span id="{{sold_eval_table_row1_cell_3_id}}">$</span></td>
+              <td><span id="{{sold_eval_table_row1_cell_4_id}}">$</span></td>
+            </tr>
+            <tr>
+              <td>{{sold_eval_table_row2_cell_1}}</td>
+              <td><span id="{{sold_eval_table_row2_cell_2_id}}">$</span></td>
+              <td><span id="{{sold_eval_table_row2_cell_3_id}}">$</span></td>
+              <td><span id="{{sold_eval_table_row2_cell_4_id}}">$</span></td>
+            </tr>
+          </table>
+        </div>
+        <!-- -->
+        <div class="pid_separator--second-line"></div>
+        <button id='pid_cma_sold_evaluate_submit'>
+          {{sold_eval_button_1}}
+        </button>
+        <button id='pid_cma_sold_evaluate_by_bca_submit'>
+          {{sold_eval_button_2}}
+        </button>
+        <button id="pid_cma_sold_evaluate_start_over">{{sold_eval_button_3}}</button>
+    </div>
+
+    <div class="pid_separator--second-line"></div>
+    {# {{ dump(active_listings_table_id) }}
+    {{ dump(cma_id)}} #}
+    {% if do_active_wpdatatable_shortcode %}
+      <h2 id="pid_cma_active_listings" class="pid_cma_listing_tables pid_separator--first-line">{{active_title}}</h2>
+      {% filter shortcodes %}
+        [wpdatatable id={{active_listings_table_id}} var1=A var2={{cma_id}}]
+      {% endfilter %}
+    {% endif %}
+      <hr class="pid_separator">
+    {% if do_sold_wpdatatable_shortcode %}
+      <h2 id="pid_cma_sold_listings" class="pid_cma_listing_tables pid_separator--first-line"><a href="{{sold_listing_links}}" target="#">{{sold_title}}</a></h2>
+      {% filter shortcodes %}
+        [wpdatatable id={{sold_listings_table_id}} var1=S var2={{cma_id}}]
+      {% endfilter %}
+    {% endif %}
+    <hr class="pid_separator">
+    {% if do_history_wpdatatable_shortcode %}
+    <h2 class="pid_separator--first-line"><a href="{{history_sold_links}}" target="#">{{history_sold_title}}</a></h2>
+      {% filter shortcodes %}
+        [wpdatatable id={{sold_listings_table_id}} var1=S var2={{history_cma_id}}]
+      {% endfilter %}
+    {% endif %}
+
+    <h2 class=" pid_separator--first-line">{{market_section_h1}}</h2>
+    {{ include ('partials-twig/components/market-stats.twig', market) }}
+    
+    <h3 class="pid_separator">{{hpi_table_heading}}</h3>
+    {% filter shortcodes %}
+      [wpdatatable id=45 var1='" . {{market}} . "']
+    {% endfilter %}
+
+  </div>
+
+  <div class="rh_page rh_page_sidebar">
+    {{ function('get_sidebar', 'default') }}
+  </div>
+</section>
