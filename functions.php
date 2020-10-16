@@ -206,7 +206,7 @@ if (is_admin()) {
 			wp_enqueue_script('cma-gauge-js', get_stylesheet_directory_uri() . '/js/gauge.min.js', null, '1.4', true);
 			// child custom js
 			wp_enqueue_script('child-custom-js', get_stylesheet_directory_uri() . '/js/child-custom.js', array('jquery'), '1.4', true);
-
+			wp_enqueue_script('index-js', get_stylesheet_directory_uri() . '/build/index.js', array('jquery'), '1.4', true);
 			// html2canvas.min.js
 			// wp_enqueue_script('html2canvas', get_stylesheet_directory_uri() . '/js/html2canvas.min.js', null, '1.4', true);
 

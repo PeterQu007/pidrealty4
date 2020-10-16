@@ -1,0 +1,30 @@
+{
+  "name": "realhomes-child-3",
+  "version": "1.0.0",
+  "description": "Js Modules for realhomes-child-3",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeterQu007/pidrealty4.git"
+  },
+  "keywords": [
+    "realhomes",
+    "wordpress",
+    "webpack",
+    "babel"
+  ],
+  "author": "Peter Qu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PeterQu007/pidrealty4/issues"
+  },
+  "homepage": "https://github.com/PeterQu007/pidrealty4#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "12.3.0"
+  }
+}
