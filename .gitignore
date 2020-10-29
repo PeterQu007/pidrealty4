@@ -1,3 +1,6 @@
+#ignore files:
+@*.*
+GoogleMapsApi*.*
 #ignore node modules:
 node_modules/
 #ignore password files:
