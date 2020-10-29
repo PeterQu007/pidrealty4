@@ -34,13 +34,19 @@ for (let tableHeading of tableHeadings) {
   if (tables.length > 0) {
     let table = tables[0];
     wpDTs.push(new WPDataTable(table, cmaType));
+    switch(cmaType){
+      case 'CMA':
+        resetGauge(1);
+        resetGauge(2);
+      break;
+      case 'VPR':
+        resetGauge(3);
+        resetGauge(4);
+        break;
+    }
   }
 }
 
-  resetGauge(1);
-  resetGauge(2);
-  resetGauge(3);
-  resetGauge(4);
 });
 
 

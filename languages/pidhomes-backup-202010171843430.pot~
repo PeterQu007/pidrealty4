@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RealHomesChildTheme 2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 17:55+0000\n"
+"POT-Creation-Date: 2020-10-13 01:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -15,27 +15,27 @@ msgstr ""
 "X-Generator: Loco https://localise.biz/\n"
 "X-Loco-Version: 2.4.3; wp-5.4.2"
 
-#: archive-community.php:61 single-cma.php:436 single-community.php:78
+#: archive-community.php:62 single-cma.php:436 single-community.php:78
 #, php-format
 msgid "%s Market Chart"
 msgstr ""
 
-#: archive-community.php:65
+#: archive-community.php:66
 #, php-format
 msgid "%s House Inventory"
 msgstr ""
 
-#: archive-community.php:78 single-community.php:94
+#: archive-community.php:79 single-community.php:94
 #, php-format
 msgid "%s School List"
 msgstr ""
 
-#: archive-community.php:91 single-community.php:107
+#: archive-community.php:92 single-community.php:107
 #, php-format
 msgid "Active Listings Of %s"
 msgstr ""
 
-#: archive-community.php:97 single-community.php:113
+#: archive-community.php:107 single-community.php:113
 #, php-format
 msgid "More Related Communities Of %s"
 msgstr ""
@@ -340,194 +340,209 @@ msgstr ""
 msgid "MORE %s WILL BE COMING SOON ..."
 msgstr ""
 
-#: src/PIDEnv.php:68
+#: src/PIDEnv.php:87
 #, php-format
 msgid "%s Communities List"
 msgstr ""
 
-#: src/PIDEnv.php:69 src/PIDHomesSEO.php:124
+#: src/PIDEnv.php:88 src/PIDHomesSEO.php:131
 #, php-format
 msgid "%s Real Estate Market Charts"
 msgstr ""
 
-#: src/PIDEnv.php:133
+#: src/PIDEnv.php:151
 #, php-format
 msgid "%s Real Estate Market Home Price Chart"
 msgstr ""
 
-#: src/PIDEnv.php:136
+#: src/PIDEnv.php:154
 #, php-format
 msgid "%s Concise School Report"
 msgstr ""
 
-#: src/PIDEnv.php:139
+#: src/PIDEnv.php:157
 #, php-format
 msgid "%s Real Estate Concise Community Report"
 msgstr ""
 
-#: src/PIDEnv.php:142
+#: src/PIDEnv.php:160
 #, php-format
 msgid "%s Real Estate Market Analysis Report"
 msgstr ""
 
-#: src/PIDEnv.php:145
+#: src/PIDEnv.php:163
 #, php-format
 msgid "%s Real Estate Market Summary Page"
 msgstr ""
 
-#: src/PIDEnv.php:149
+#: src/PIDEnv.php:167
 msgid "Greater Vancouver Real Estate Market Summary Page"
 msgstr ""
 
-#: src/PIDHomesSEO.php:70
+#: src/PIDHomesSEO.php:72
 msgid "Surrey REALTOR | Peter Qu | Buy & Sell"
 msgstr ""
 
-#: src/PIDHomesSEO.php:73
+#: src/PIDHomesSEO.php:75
 msgid "Vancouver REALTOR | Peter Qu | Buy & Sell"
 msgstr ""
 
-#: src/PIDHomesSEO.php:83 src/PIDHomesSEO.php:89 src/PIDHomesSEO.php:95
-#: src/PIDHomesSEO.php:102 src/PIDHomesSEO.php:108
+#: src/PIDHomesSEO.php:85 src/PIDHomesSEO.php:91 src/PIDHomesSEO.php:97
+#: src/PIDHomesSEO.php:103 src/PIDHomesSEO.php:109 src/PIDHomesSEO.php:115
 #, php-format
 msgid "%s REALTOR"
 msgstr ""
 
 #. Author of the theme
-#: src/PIDHomesSEO.php:84 src/PIDHomesSEO.php:90 src/PIDHomesSEO.php:96
-#: src/PIDHomesSEO.php:103 src/PIDHomesSEO.php:109 src/PIDHomesSEO.php:117
+#: src/PIDHomesSEO.php:86 src/PIDHomesSEO.php:92 src/PIDHomesSEO.php:98
+#: src/PIDHomesSEO.php:104 src/PIDHomesSEO.php:110 src/PIDHomesSEO.php:116
+#: src/PIDHomesSEO.php:124
 msgid "Peter Qu"
 msgstr ""
 
-#: src/PIDHomesSEO.php:85
+#: src/PIDHomesSEO.php:87
 #, php-format
 msgid "%s Communities Expert"
 msgstr ""
 
-#: src/PIDHomesSEO.php:86 src/PIDHomesSEO.php:98 src/PIDHomesSEO.php:105
-#: src/PIDHomesSEO.php:111 src/PIDHomesSEO.php:121 src/PIDHomesSEO.php:129
-#: src/PIDHomesSEO.php:134 src/PIDHomesSEO.php:138
+#: src/PIDHomesSEO.php:88 src/PIDHomesSEO.php:100 src/PIDHomesSEO.php:106
+#: src/PIDHomesSEO.php:112 src/PIDHomesSEO.php:118 src/PIDHomesSEO.php:128
+#: src/PIDHomesSEO.php:136 src/PIDHomesSEO.php:140 src/PIDHomesSEO.php:144
+#: src/PIDHomesSEO.php:148
 msgid "Professionalism | Integrity | Diligence"
 msgstr ""
 
-#: src/PIDHomesSEO.php:91
+#: src/PIDHomesSEO.php:93
 #, php-format
 msgid "%s Home Price Expert"
 msgstr ""
 
-#: src/PIDHomesSEO.php:97
+#: src/PIDHomesSEO.php:99
 #, php-format
 msgid "%s Market Analysis Expert"
 msgstr ""
 
-#: src/PIDHomesSEO.php:104
+#: src/PIDHomesSEO.php:105 src/PIDHomesSEO.php:111
 #, php-format
 msgid "%s Listing Expert"
 msgstr ""
 
-#: src/PIDHomesSEO.php:110 src/PIDHomesSEO.php:137
+#: src/PIDHomesSEO.php:117 src/PIDHomesSEO.php:147
 #, php-format
 msgid "%s Real Estate Expert"
 msgstr ""
 
-#: src/PIDHomesSEO.php:116
+#: src/PIDHomesSEO.php:123
 msgid "Vancouver REALTOR"
 msgstr ""
 
-#: src/PIDHomesSEO.php:120
+#: src/PIDHomesSEO.php:127
 #, php-format
 msgid "%s Communities Summary Report"
 msgstr ""
 
-#: src/PIDHomesSEO.php:128
+#: src/PIDHomesSEO.php:135
 #, php-format
 msgid "%s Market Analysis Report"
 msgstr ""
 
-#: src/PIDHomesSEO.php:133
+#: src/PIDHomesSEO.php:139
+#, php-format
+msgid "%s Active Listings"
+msgstr ""
+
+#: src/PIDHomesSEO.php:143
 #, php-format
 msgid "%s Listing"
 msgstr ""
 
-#: src/PIDHomesSEO.php:160
+#: src/PIDHomesSEO.php:171
 msgid ""
 "Surrey REALTOR, Peter Qu, Home for sale in Surrey, South Surrey, White Rock, "
 "Fraser Heights, Fleetwood, Cloverdale, Single House, Townhouse, Apartment "
 "Condo By Surrey Real Estate Agent Peter Qu"
 msgstr ""
 
-#: src/PIDHomesSEO.php:162
+#: src/PIDHomesSEO.php:173
 msgid ""
 "Vancouver REALTOR, Peter Qu, Home for sale in Vancouver,Surrey,Burnaby,"
 "Richmond,Coquitlam,Port Moody,White Rock,Single House, Townhouse, Apartment "
 "Condo By Vancouver Real Estate Agent Peter Qu"
 msgstr ""
 
-#: src/PIDHomesSEO.php:171
+#: src/PIDHomesSEO.php:182
 msgid ""
 "Surrey Real Estate Neighborhoods And Communities Expert, Surrey REALTOR, "
 "Peter Qu, Surrey Home for sale, South Surrey, Cloverdale, White Rock, Fraser "
 "Heights, Fleetwood, Morgan Heights"
 msgstr ""
 
-#: src/PIDHomesSEO.php:172
+#: src/PIDHomesSEO.php:183
 msgid ""
 "Surrey Real Estate Professional and Real Estate Expert, single house, "
 "townhouse, apartment, condo, residential, commercial"
 msgstr ""
 
-#: src/PIDHomesSEO.php:176
+#: src/PIDHomesSEO.php:187
 msgid ""
 "Surrey Real Estate Home Price Expert, Free Home Evaluation, Surrey REALTOR, "
 "Peter Qu, Surrey Home for sale"
 msgstr ""
 
-#: src/PIDHomesSEO.php:177 src/PIDHomesSEO.php:182 src/PIDHomesSEO.php:188
-#: src/PIDHomesSEO.php:193
+#: src/PIDHomesSEO.php:188 src/PIDHomesSEO.php:193 src/PIDHomesSEO.php:199
+#: src/PIDHomesSEO.php:204
 msgid ""
 "Surrey Real Estate Professional and Expert, South Surrey, White Rock, Fraser "
 "Heights, Fleetwood, Morgan Heights, Cloverdale, Guilford"
 msgstr ""
 
-#: src/PIDHomesSEO.php:181
+#: src/PIDHomesSEO.php:192
 msgid ""
 "Surrey Real Estate CMA Market Analysis Expert, Surrey REALTOR, Peter Qu, "
 "Surrey Home for sale"
 msgstr ""
 
-#: src/PIDHomesSEO.php:187
+#: src/PIDHomesSEO.php:198
 #, php-format
 msgid ""
 "%s Home For Sale, Listing Expert, Single House, Townhouse, Apartment, Condo, "
 "Surrey REALTOR, Peter Qu"
 msgstr ""
 
-#: src/PIDHomesSEO.php:192
+#: src/PIDHomesSEO.php:203
 msgid ""
 "Surrey REALTOR, Peter Qu, Buy and Sell in Surrey, Home for sale in Surrey, "
 "South Surrey, White Rock, Fraser Heights, Fleetwood, Cloverdale, Single "
 "House, Townhouse, Apartment Condo By Surrey Realtor Peter Qu"
 msgstr ""
 
-#: src/PIDHomesSEO.php:197
+#: src/PIDHomesSEO.php:208
 msgid ""
 "Vancouver REALTOR, Peter Qu, Buy and Sell in Vancouver, Home for sale in "
 "Vancouver, Single House, Townhouse, Apartment Condo By Vancouver Realtor "
 "Peter Qu"
 msgstr ""
 
-#: src/PIDHomesSEO.php:198
+#: src/PIDHomesSEO.php:209
 msgid ""
 "Vancouver Real Estate Professional and Expert, Vancouver,Burnaby,Richmond,"
 "Surrey,White Rock,Coquitlam"
 msgstr ""
 
-#: src/PIDHomesSEO.php:208
+#: src/PIDHomesSEO.php:219
 msgid "Surrey REALTOR Peter Qu"
 msgstr ""
 
-#: src/PIDHomesSEO.php:210
+#: src/PIDHomesSEO.php:221
 msgid "Vancouver REALTOR Peter Qu"
+msgstr ""
+
+#. Name of the template
+msgid "Fluid Width"
+msgstr ""
+
+#. Name of the template
+msgid "Full Width"
 msgstr ""
 
 #. Name of the template

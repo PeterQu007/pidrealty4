@@ -49,7 +49,7 @@ function loop_multi($result)
   return $returned;
 }
 
-use PIDHomes\PIDEnv;
+use PIDHomes\{PIDEnv, PIDTerms};
 use Timber\Timber;
 
 $context = [];
@@ -83,6 +83,8 @@ if ($post_lang == 'cn') {
 }
 
 $cmaPostID = get_the_ID(); // get the market post ID
+$cmaExcerpt = get_the_excerpt(); // get the post excerpt, which keep the cma type: cma or vpr
+
 $terms = get_terms(array(
   'taxonomy' => 'property-city',
   // 'parent' => 0, //get top level taxo:: City
@@ -213,14 +215,27 @@ $context['subject_address'] = $Subject_Address;
 $context['neighborhood'] = str_replace($City, '', $Neighborhood);
 $context['city'] = $City;
 $context['dwelling_type'] = $dwelling_type;
-$context['cma_id_label'] = __('CMA NO', 'pidhomes');
+$context['cma_id_label'] = $cmaExcerpt == 'CMA' ? __('CMA NO', 'pidhomes') : __('VRP NO', 'pidhomes');
+$context['cma_report_type'] = $cmaExcerpt; // CMA or VPR
+
 $context['cma_id'] = $cma_ID;
-$context['bca_change_label'] = __('BCA Change%', 'pidhomes');
-$context['list_price_label'] = __('List Price', 'pidhomes');
-$context['sold_price_label'] = __('Sold Price', 'pidhomes');
+switch ($cmaExcerpt) {
+  case 'CMA':
+    $context['bca_change_label'] = __('BCA Change% Range', 'pidhomes');
+    $context['list_price_label'] = __('List Price Range', 'pidhomes');
+    break;
+  case 'VPR':
+    $context['bca_change_label'] = __('BCA Change%', 'pidhomes');
+    $context['list_price_label'] = __('List Price', 'pidhomes');
+    $context['sold_price_label'] = __('Sold Price', 'pidhomes');
+    break;
+}
+
 $context['bca_change'] = strval($BCA_Change * 100) . '%';
 $context['list_price'] = '$' . number_format($List_Price, 0, '.', ',');
 $context['sold_price'] = empty($Sold_Price) ? "?" : '$' . number_format($Sold_Price, 0, '.', ',');
+$context['list_price_range_1'] = '$' . number_format($List_Price, 0, '.', ',');
+$context['list_price_range_2'] = empty($Sold_Price) ? "?" : '$' . number_format($Sold_Price, 0, '.', ',');
 $context['bca_change_value'] = $BCA_Change;
 $context['list_price_value'] = $List_Price;
 $context['sold_price_value'] = empty($Sold_Price) ? $List_Price : $Sold_Price;
@@ -467,7 +482,9 @@ $context['market_section_h1'] = sprintf(__("%s Market Chart", 'pidhomes'), $env-
 get_template_part('pid-partials/content', 'market-stats', json_encode($cma_market));
 
 // DATA:: HPI Price Table
-$context['hpi_table_heading'] = sprintf(__('%s Real Estate Monthly House HPI', 'pidhomes'), ucfirst($market));
+$context['hpi_table_heading'] = sprintf(__('%s Real Estate Monthly House HPI', 'pidhomes'), ucfirst($env->community_label));
+
+$context['hpi_market'] = $env->location_term->neighborhood_code;
 
 // Render CMA Context
 Timber::render('partials-twig/single-cma.twig', $context);
@@ -475,3 +492,5 @@ Timber::render('partials-twig/single-cma.twig', $context);
 /************ */
 get_template_part('assets/modern/partials/banner/peterqu');
 get_footer();
+var_dump($env->location_term->neighborhood_code);
+var_dump($env->community_label);

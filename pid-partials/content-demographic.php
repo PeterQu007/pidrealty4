@@ -39,9 +39,8 @@ if ($community == 'gva') {
       $City_Chinese_Name = $row['City_Chinese_Name'];
       $City_Full_Name = $language == 'en' ? $City_Full_Name : $City_Chinese_Name;
     }
+    $context['demographic_title'] = $City_Full_Name . __(' Demographic Information', 'pidhomes');
+    $context['city_code'] = $City_Code;
+    Timber::render('partials-twig/components/demographic.twig', $context);
   }
-  $context['demographic_title'] = $City_Full_Name . __(' Demographic Information', 'pidhomes');
-  $context['city_code'] = $City_Code;
 }
-
-Timber::render('partials-twig/components/demographic.twig', $context);

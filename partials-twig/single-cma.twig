@@ -12,10 +12,17 @@
       {{ city }}
     </h2>
     <h3 class='pid_cam_subject_price'>
-      <span>{{cma_id_label}}: {{cma_id}} | </span>
+      {% if cma_report_type == 'CMA' %}
+      <span id="cma_report_id" value={{cma_report_type}}>{{cma_id_label}}: {{cma_id}} | </span>
+      <span id="subject-active-price-id" value={{list_price_value}}>{{list_price_label}}: <b>{{list_price_range_1}}</b> - </span>
+      <span id="subject-sold-price-id" value={{sold_price_value}}><b>{{list_price_range_2}}</b> | </span>
+      <span id="subject-bca-change-id" value={{bca_change_value}}>{{bca_change_label}}: <b id="bca_change_range">{{bca_change_range}}</b> </span>
+      {% else %}
+      <span id="cma_report_id" value={{cma_report_type}}>{{cma_id_label}}: {{cma_id}} | </span>
       <span id="subject-active-price-id" value={{list_price_value}}>{{list_price_label}}: <b>{{list_price}}</b> | </span>
       <span id="subject-sold-price-id" value={{sold_price_value}}>{{sold_price_label}}: <b>{{sold_price}}</b> | </span>
       <span id="subject-bca-change-id" value={{bca_change_value}}>{{bca_change_label}}: <b>{{bca_change}}</b> </span>
+      {% endif %}
     <h3>
     <canvas id='cma-value-price-ratio-gauge-1' width="200", height="120"></canvas>
     <canvas id='cma-value-price-ratio-gauge-2' width="200", height="120"></canvas>
@@ -217,7 +224,7 @@
     
     <h3 class="pid_separator">{{hpi_table_heading}}</h3>
     {% filter shortcodes %}
-      [wpdatatable id=45 var1='" . {{market}} . "']
+      [wpdatatable id=45 var1={{hpi_market}}]
     {% endfilter %}
 
   </div>

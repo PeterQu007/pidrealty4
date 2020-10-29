@@ -2,11 +2,12 @@ class WPDataTable {
   constructor(table, cmaType) {
     this.table = table;
     this.cmaType = cmaType;
-    this.tableID = $j(table).attr('data-wpdatatable_id');
+    this.tableID = $j(table).attr("data-wpdatatable_id");
     let is_mobile = false;
-    if ($j('#pid-mobile').css('display') == 'none') {
+    if ($j("#pid-mobile").css("display") == "none") {
       is_mobile = true;
     }
+    this.cmaReportType = $j("#cma_report_id").attr("value");
     this.is_mobile = is_mobile;
     let pathArray = window.location.pathname.split("/");
     let lastItem = pathArray.pop();
@@ -43,11 +44,11 @@ class WPDataTable {
             this.get_aggregates();
             this.table_events();
             setTimeout(() => {
-              this.evaluateByMarketPrice('active');
-              this.evaluateByBCAChange('active');
-              this.evaluateByMarketPrice('sold');
-              this.evaluateByBCAChange('sold');
-            }, 2000)
+              this.evaluateByMarketPrice("active");
+              this.evaluateByBCAChange("active");
+              this.evaluateByMarketPrice("sold");
+              this.evaluateByBCAChange("sold");
+            }, 2000);
           }, 5000);
           break;
         }
@@ -59,12 +60,14 @@ class WPDataTable {
   }
 
   table_events() {
-    let rows = this.table.querySelectorAll('tr');
-    rows.forEach(row => row.addEventListener('click', (e) => {
-      // console.log(e);
-      let row = $j(e.target.parentNode);
-      row.toggleClass('pid_clicked_table_row');
-    }))
+    let rows = this.table.querySelectorAll("tr");
+    rows.forEach((row) =>
+      row.addEventListener("click", (e) => {
+        // console.log(e);
+        let row = $j(e.target.parentNode);
+        row.toggleClass("pid_clicked_table_row");
+      })
+    );
   }
 
   get_aggregates() {
@@ -120,20 +123,39 @@ class WPDataTable {
     // PER Active Listings
     let buttonEvaluate = $j("#pid_cma_evaluate_submit");
     buttonEvaluate.click((e) => {
-      this.evaluateByMarketPrice('active');
-    })
+      this.evaluateByMarketPrice("active");
+    });
   }
 
   evaluateByMarketPrice(cmaType) {
-    let maxPricePFCellLabel = this.tableID == 34 ? `#pid_cma_${cmaType}_price_per_square_feet_max` : `#pid_cma_${cmaType}_land_price_per_square_feet_max`;
-    let avgPricePFCellLabel = this.tableID == 34 ? `#pid_cma_${cmaType}_price_per_square_feet_avg` : `#pid_cma_${cmaType}_land_price_per_square_feet_avg`;
-    let minPricePFCellLabel = this.tableID == 34 ? `#pid_cma_${cmaType}_price_per_square_feet_min` : `#pid_cma_${cmaType}_land_price_per_square_feet_min`;
+    let maxPricePFCellLabel =
+      this.tableID == 34
+        ? `#pid_cma_${cmaType}_price_per_square_feet_max`
+        : `#pid_cma_${cmaType}_land_price_per_square_feet_max`;
+    let avgPricePFCellLabel =
+      this.tableID == 34
+        ? `#pid_cma_${cmaType}_price_per_square_feet_avg`
+        : `#pid_cma_${cmaType}_land_price_per_square_feet_avg`;
+    let minPricePFCellLabel =
+      this.tableID == 34
+        ? `#pid_cma_${cmaType}_price_per_square_feet_min`
+        : `#pid_cma_${cmaType}_land_price_per_square_feet_min`;
 
-    let maxImprovePricePFCellLabel = this.tableID == 34 ? `#pid_cma_${cmaType}_price_per_square_feet_max` : `#pid_cma_${cmaType}_improve_price_per_square_feet_max`;
-    let avgImprovePricePFCellLabel = this.tableID == 34 ? `#pid_cma_${cmaType}_price_per_square_feet_avg` : `#pid_cma_${cmaType}_improve_price_per_square_feet_avg`;
-    let minImprovePricePFCellLabel = this.tableID == 34 ? `#pid_cma_${cmaType}_price_per_square_feet_min` : `#pid_cma_${cmaType}_improve_price_per_square_feet_min`;
+    let maxImprovePricePFCellLabel =
+      this.tableID == 34
+        ? `#pid_cma_${cmaType}_price_per_square_feet_max`
+        : `#pid_cma_${cmaType}_improve_price_per_square_feet_max`;
+    let avgImprovePricePFCellLabel =
+      this.tableID == 34
+        ? `#pid_cma_${cmaType}_price_per_square_feet_avg`
+        : `#pid_cma_${cmaType}_improve_price_per_square_feet_avg`;
+    let minImprovePricePFCellLabel =
+      this.tableID == 34
+        ? `#pid_cma_${cmaType}_price_per_square_feet_min`
+        : `#pid_cma_${cmaType}_improve_price_per_square_feet_min`;
 
-    let avgBCAChangePercentageCellLabel = this.tableID == 34 ? "" : `#pid_cma_${cmaType}_bca_change_perc_avg`;
+    let avgBCAChangePercentageCellLabel =
+      this.tableID == 34 ? "" : `#pid_cma_${cmaType}_bca_change_perc_avg`;
 
     let floorAreaCellLabel = "#pid_cma_total_floor_area";
     let landSizeCellLabel = "#pid_cma_total_land_size";
@@ -197,7 +219,6 @@ class WPDataTable {
         .replace("%", "")
     );
 
-
     let floorArea = parseFloat(
       $j(floorAreaCellLabel).text().trim().replace(",", "")
     );
@@ -208,7 +229,11 @@ class WPDataTable {
       $j(bcaTotalValueCellLabel).text().trim().replace(",", "").replace("$", "")
     );
     let avgBCAChangePercentage = parseFloat(
-      $j(avgBCAChangePercentageCellLabel).text().trim().replace(",", "").replace("%", "")
+      $j(avgBCAChangePercentageCellLabel)
+        .text()
+        .trim()
+        .replace(",", "")
+        .replace("%", "")
     );
 
     switch (this.tableID) {
@@ -218,13 +243,22 @@ class WPDataTable {
         minPrice = minPricePF * floorArea;
         break;
       case "35": //detached
-        maxPrice = maxPricePF * landSize * (100 + avgBCAChangePercentage) / 100;
-        avgPrice = avgPricePF * landSize * (100 + avgBCAChangePercentage) / 100;
-        minPrice = minPricePF * landSize * (100 + avgBCAChangePercentage) / 100;
+        maxPrice =
+          (maxPricePF * landSize * (100 + avgBCAChangePercentage)) / 100;
+        avgPrice =
+          (avgPricePF * landSize * (100 + avgBCAChangePercentage)) / 100;
+        minPrice =
+          (minPricePF * landSize * (100 + avgBCAChangePercentage)) / 100;
 
-        maxImprovePrice = maxImprovePricePF * floorArea * (100 + avgBCAChangePercentage) / 100;
-        avgImprovePrice = avgImprovePricePF * floorArea * (100 + avgBCAChangePercentage) / 100;
-        minImprovePrice = minImprovePricePF * floorArea * (100 + avgBCAChangePercentage) / 100;
+        maxImprovePrice =
+          (maxImprovePricePF * floorArea * (100 + avgBCAChangePercentage)) /
+          100;
+        avgImprovePrice =
+          (avgImprovePricePF * floorArea * (100 + avgBCAChangePercentage)) /
+          100;
+        minImprovePrice =
+          (minImprovePricePF * floorArea * (100 + avgBCAChangePercentage)) /
+          100;
 
         maxPrice += maxImprovePrice;
         avgPrice += avgImprovePrice;
@@ -239,7 +273,7 @@ class WPDataTable {
       style: "currency",
       currency: "USD",
       minimumFractionDigits: 0,
-      maximumFractionDigits: 0
+      maximumFractionDigits: 0,
     });
 
     cmaMinPrice.text("------");
@@ -254,25 +288,68 @@ class WPDataTable {
 
     // show value-price-ratio gauge
     let rangeMax = maxPrice - minPrice;
-    let subjectPrice = parseInt($j(`#subject-${cmaType}-price-id`).attr('value'));
+    let subjectPrice = 0;
+    switch (this.cmaReportType) {
+      case "CMA":
+        let subjectPrice1 = parseInt(
+          $j(`#subject-active-price-id`).attr("value")
+        );
+        let subjectPrice2 = parseInt(
+          $j(`#subject-sold-price-id`).attr("value")
+        );
+        subjectPrice = (subjectPrice1 + subjectPrice2) / 2;
+        break;
+      default:
+        subjectPrice = parseInt(
+          $j(`#subject-${cmaType}-price-id`).attr("value")
+        );
+        break;
+    }
     let rangeSubjectVal = maxPrice - subjectPrice;
     let rangeAvg = maxPrice - avgPrice;
-    let canvasNo = cmaType == 'active' ? 1 : 3;
-    this.drawValuePriceRationGauge(0, rangeAvg, rangeMax, rangeSubjectVal, canvasNo);
-
+    let canvasNo = cmaType == "active" ? 1 : 3;
+    let gaugeColor = "";
+    switch (this.cmaReportType) {
+      case "CMA":
+        rangeMax = maxPrice - minPrice;
+        // subjectPrice = parseInt($j(`#subject-${cmaType}-price-id`).attr('value'));
+        rangeSubjectVal = subjectPrice - minPrice;
+        rangeAvg = avgPrice - minPrice;
+        canvasNo = cmaType == "active" ? 1 : 3;
+        gaugeColor = "#FF2A2A"; //red
+        break;
+      case "VPR":
+        rangeMax = maxPrice - minPrice;
+        subjectPrice = parseInt(
+          $j(`#subject-${cmaType}-price-id`).attr("value")
+        );
+        rangeSubjectVal = maxPrice - subjectPrice;
+        rangeAvg = maxPrice - avgPrice;
+        canvasNo = cmaType == "active" ? 1 : 3;
+        gaugeColor = "#00FF55"; //green
+        break;
+    }
+    this.drawValuePriceRationGauge(
+      0,
+      rangeAvg,
+      rangeMax,
+      rangeSubjectVal,
+      canvasNo,
+      gaugeColor
+    );
   }
 
   evaluateSoldButton1() {
     let buttonEvaluate = $j("#pid_cma_sold_evaluate_submit");
     buttonEvaluate.click((e) => {
-      this.evaluateByMarketPrice('sold');
+      this.evaluateByMarketPrice("sold");
     });
   }
 
   evaluateButton2() {
     let buttonEvaluate = $j("#pid_cma_evaluate_by_bca_submit");
     buttonEvaluate.click((e) => {
-      this.evaluateByBCAChange('active');
+      this.evaluateByBCAChange("active");
     });
   }
 
@@ -328,7 +405,7 @@ class WPDataTable {
       style: "currency",
       currency: "USD",
       minimumFractionDigits: 0,
-      maximumFractionDigits: 0
+      maximumFractionDigits: 0,
     });
 
     cmaMaxPrice.text(formatter.format(maxPrice.toFixed(0)));
@@ -337,24 +414,78 @@ class WPDataTable {
 
     // show value-price-ratio gauge
     let rangeMax = maxPrice - minPrice;
-    let subjectPrice = parseInt($j(`#subject-${cmaType}-price-id`).attr('value'));
+    let subjectPrice = 0;
+    switch (this.cmaReportType) {
+      case "CMA":
+        let subjectPrice1 = parseInt(
+          $j(`#subject-active-price-id`).attr("value")
+        );
+        let subjectPrice2 = parseInt(
+          $j(`#subject-sold-price-id`).attr("value")
+        );
+        subjectPrice = (subjectPrice1 + subjectPrice2) / 2;
+        // set BCA Change range
+        let htmlBCAChange = $j("#bca_change_range");
+        let bcaChange1 = parseFloat(
+          ((subjectPrice1 - bcaTotalValue) / bcaTotalValue) * 100
+        ).toFixed(2);
+        let bcaChange2 = parseFloat(
+          ((subjectPrice2 - bcaTotalValue) / bcaTotalValue) * 100
+        ).toFixed(2);
+        htmlBCAChange.text(`${bcaChange1}% - ${bcaChange2}%`);
+        break;
+      default:
+        subjectPrice = parseInt(
+          $j(`#subject-${cmaType}-price-id`).attr("value")
+        );
+        break;
+    }
     let rangeSubjectVal = maxPrice - subjectPrice;
     let rangeAvg = maxPrice - avgPrice;
-    let canvasNo = cmaType == 'active' ? 2 : 4;
-    this.drawValuePriceRationGauge(0, rangeAvg, rangeMax, rangeSubjectVal, canvasNo);
+    let canvasNo = cmaType == "active" ? 2 : 4;
+    let gaugeColor = "";
+    switch (this.cmaReportType) {
+      case "CMA":
+        rangeMax = maxPrice - minPrice;
+        // subjectPrice = parseInt($j(`#subject-${cmaType}-price-id`).attr('value'));
+        rangeSubjectVal = subjectPrice - minPrice;
+        rangeAvg = avgPrice - minPrice;
+        canvasNo = cmaType == "active" ? 2 : 4;
+        gaugeColor = "#FF2A2A"; //red
+        break;
+      case "VPR":
+        rangeMax = maxPrice - minPrice;
+        subjectPrice = parseInt(
+          $j(`#subject-${cmaType}-price-id`).attr("value")
+        );
+        rangeSubjectVal = maxPrice - subjectPrice;
+        rangeAvg = maxPrice - avgPrice;
+        canvasNo = cmaType == "active" ? 2 : 4;
+        gaugeColor = "#00FF55"; //green
+        break;
+    }
+
+    this.drawValuePriceRationGauge(
+      0,
+      rangeAvg,
+      rangeMax,
+      rangeSubjectVal,
+      canvasNo,
+      gaugeColor
+    );
   }
 
   evaluateSoldButton2() {
     let buttonEvaluate = $j("#pid_cma_sold_evaluate_by_bca_submit");
     buttonEvaluate.click((e) => {
-      this.evaluateByBCAChange('sold');
+      this.evaluateByBCAChange("sold");
     });
   }
 
   startOver() {
     let buttonEvaluate = $j("#pid_cma_evaluate_start_over");
     buttonEvaluate.click((e) => {
-      this.resetCMAResult('active');
+      this.resetCMAResult("active");
       resetGauge(1);
       resetGauge(2);
     });
@@ -363,7 +494,7 @@ class WPDataTable {
   startOverSold() {
     let buttonEvaluate = $j("#pid_cma_sold_evaluate_start_over");
     buttonEvaluate.click((e) => {
-      this.resetCMAResult('sold');
+      this.resetCMAResult("sold");
       resetGauge(3);
       resetGauge(4);
     });
@@ -384,12 +515,12 @@ class WPDataTable {
     cmaMinPrice2.text("$");
   }
 
-  drawValuePriceRationGauge(min, avg, max, val, canvasNo) {
-    let gaugeColor = '#6FADCF';
+  drawValuePriceRationGauge(min, avg, max, val, canvasNo, gaugeColor) {
+    // let gaugeColor = "#6FADCF";
     if (val > avg) {
-      gaugeColor = '#00FF55' // green
+      gaugeColor = gaugeColor; // "#00FF55"; // green
     } else {
-      gaugeColor = '#FF2A2A' // red
+      gaugeColor = gaugeColor == "#00FF55" ? "#FF2A2A" : "#00FF55"; // red
     }
 
     var opts = {
@@ -399,18 +530,19 @@ class WPDataTable {
       pointer: {
         length: 0.6, // // Relative to gauge radius
         strokeWidth: 0.035, // The thickness
-        color: '#000000' // Fill color
+        color: "#000000", // Fill color
       },
-      limitMax: false,     // If false, max value increases automatically if value > maxValue
-      limitMin: false,     // If true, the min value of the gauge will be fixed
-      colorStart: gaugeColor,   // Colors
+      limitMax: false, // If false, max value increases automatically if value > maxValue
+      limitMin: false, // If true, the min value of the gauge will be fixed
+      colorStart: gaugeColor, // Colors
       colorStop: gaugeColor, //'#8FC0DA',    // just experiment with them
-      strokeColor: '#E0E0E0',  // to see which ones work best for you
+      strokeColor: "#E0E0E0", // to see which ones work best for you
       generateGradient: true,
-      highDpiSupport: true,     // High resolution support
-
+      highDpiSupport: true, // High resolution support
     };
-    let target = document.getElementById(`cma-value-price-ratio-gauge-${canvasNo}`); // your canvas element
+    let target = document.getElementById(
+      `cma-value-price-ratio-gauge-${canvasNo}`
+    ); // your canvas element
     //clear target canvas
     let chartContext = target.getContext("2d");
     let width = target.width;
@@ -418,7 +550,7 @@ class WPDataTable {
     chartContext.clearRect(0, 0, width, height);
     let gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
     gauge.maxValue = max; // set max gauge value
-    gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+    gauge.setMinValue(0); // Prefer setter over gauge.minValue = 0
     gauge.animationSpeed = 32; // set animation speed (32 is default value)
     gauge.set(val); // set actual value
   }
@@ -457,14 +589,14 @@ class WPDataTable {
         let aggr_price = aggr_price_cell.innerText
           .toLowerCase()
           .replace(`${aggregateType}`, "")
-          .replace('最大值:', '')
-          .replace('最小值:', '')
-          .replace('平均值:', '')
+          .replace("最大值:", "")
+          .replace("最小值:", "")
+          .replace("平均值:", "")
           .replace("=", "")
           .replace(".00", "")
           .replace(",", "")
           .trim();
-        aggr_price = parseFloat(aggr_price)
+        aggr_price = parseFloat(aggr_price);
         if (aggr_price > 1000) {
           aggr_price = aggr_price.toFixed(0);
         } else {
